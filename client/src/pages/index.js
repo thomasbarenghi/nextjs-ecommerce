@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { productos } from "./api/data";
-import ProductItem from "../componentes/proyecto/productItem/productItem";
+import {ProductItem} from "@/componentes";
 
 export default function Home() {
   return (
