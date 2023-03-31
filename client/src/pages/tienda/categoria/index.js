@@ -10,12 +10,18 @@ export default function Categories() {
     <>
       <Head title="Categories" description="Categories" keywords="Categories" />
       <main>
-        <section className="w-full bg-gray-200">
+        <section className="w-full bg-pink-200">
           <div
-            className="seccion container flex flex-col items-center justify-center py-14 align-middle"
+            className="seccion container flex flex-col items-center justify-center text-center align-middle lg:w-2/4"
             style={{ minHeight: "30vh" }}
           >
-            <h1 className="text-center font-britanicaBold">Categorias</h1>
+            <h1 className="text-center font-britanicaBold text-pink-600">
+            Compra por categoría
+            </h1>
+            <p className="text-center text-pink-600">
+              Tener una tipografía con algo de impacto, pero con una elegancia
+              visual, hará que tu arte suba al podio de los ganadores.
+            </p>
           </div>
         </section>
         <section className="seccion container w-full py-24">
@@ -24,7 +30,7 @@ export default function Categories() {
               <div>
                 <Link href={`/tienda/categoria/${category.id}`}>
                   <div className="flex flex-col gap-4">
-                    <div className="relative flex aspect-square flex-col gap-4">
+                    <div className="relative flex flex-col gap-4" style={{aspectRatio: "4/3"}}>
                       <Image
                         src={category.imagen}
                         alt={category.nombre}
@@ -33,7 +39,8 @@ export default function Categories() {
                       />
                     </div>
                     <div>
-                      <h4 className="font-britanicaBold">{category.nombre}</h4>
+                      <h4 className="font-britanicaBold text-center">{category.nombre}</h4>
+                      <p className="text-center">8 Productos disponibles</p>
                     </div>
                   </div>
                 </Link>

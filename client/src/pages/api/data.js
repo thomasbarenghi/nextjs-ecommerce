@@ -29,16 +29,19 @@ export const categories = [
   {
     id: 1,
     nombre: "Categoria 1",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     imagen: "/img/placeholder.webp",
   },
   {
     id: 2,
     nombre: "Categoria 2",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     imagen: "/img/placeholder.webp",
   },
   {
     id: 3,
     nombre: "Categoria 3",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     imagen: "/img/placeholder.webp",
   },
 ];

@@ -18,23 +18,30 @@ export default function Carrito({ setCartVisibility, visibility }) {
         <Image
           src="/icon/cross.svg"
           alt="close"
-          width={25}
-          height={25}
-          className="absolute right-2 top-2 cursor-pointer"
+          width={15}
+          height={15}
+          className="absolute right-4 top-4 cursor-pointer"
           onClick={() => setCartVisibility(!visibility)}
         />
         <div id="items">
           <h3 className="mb-6 font-britanicaBold">Carrito</h3>
           <div className="flex flex-col gap-4">
+            {
+              cart.length === 0 && (
+                <div className="flex flex-col items-center justify-center">
+                  <h4 className="text-center">Parece que tu carrito esta vacio</h4>
+                  </div>
+              )
+            }
             {Array.isArray(cart) &&
               cart.map((producto) => (
                 <div className="relative">
                   <Image
                     src="/icon/cross.svg"
                     alt="delete"
-                    width={25}
-                    height={25}
-                    className="absolute right-2 top-2 cursor-pointer"
+                    width={10}
+                    height={10}
+                    className="absolute bottom-0 right-2 top-0 mb-0 mt-0 cursor-pointer"
                     onClick={() => dispatch(manageCart(producto))}
                   />
                   <Link

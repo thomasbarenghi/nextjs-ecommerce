@@ -11,12 +11,18 @@ export default function Categories() {
     <>
       <Head title="Categories" description="Categories" keywords="Categories" />
       <main>
-        <section className="w-full bg-gray-200">
+      <section className="w-full bg-violet-200">
           <div
-            className="seccion container flex flex-col items-center justify-center py-14 align-middle"
+            className="seccion container flex flex-col items-center justify-center text-center align-middle lg:w-2/4"
             style={{ minHeight: "30vh" }}
           >
-            <h1 className="text-center font-britanicaBold">Tienda</h1>
+            <h1 className="text-center font-britanicaBold text-violet-800">
+            Explora nuestra tienda
+            </h1>
+            <p className="text-center text-violet-800">
+              Tener una tipografía con algo de impacto, pero con una elegancia
+              visual, hará que tu arte suba al podio de los ganadores.
+            </p>
           </div>
         </section>
         <section className="seccion container w-full py-24">

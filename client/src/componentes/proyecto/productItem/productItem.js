@@ -25,7 +25,7 @@ export default function ProductItem({ producto }) {
         key={producto.id}
         className="flex flex-col gap-4"
       >
-        <div className="relative aspect-square rounded-md object-cover">
+        <div className="relative rounded-md object-cover" style={{aspectRatio: "1/1"} }>
           <Image
             src={producto.imagen}
             alt={producto.nombre}
