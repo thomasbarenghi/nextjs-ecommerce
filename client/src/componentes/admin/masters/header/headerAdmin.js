@@ -1,4 +1,3 @@
-import Carrito from "../../proyecto/carrito/carrito";
 import Image from "next/image";
 import Link from "next/link";
 import Router from "next/router";
@@ -10,7 +9,7 @@ export default function Header() {
   return (
     <header className="flex flex-row bg-white py-8 ">
       <div className="seccion container flex justify-between ">
-        <Link href="/" className="flex flex-row items-center gap-4">
+        <Link href="/admin" className="flex flex-row items-center gap-4">
           <Image src="/icon/logo.svg" alt="logo" width={130} height={35} />
         </Link>
         <div className="flex flex-row items-center gap-10">
@@ -18,7 +17,7 @@ export default function Header() {
             <ul className="flex flex-row gap-9">
               <li>
                 <Link
-                  href="/"
+                  href="/admin"
                   className={
                     Router.pathname === "/"
                       ? "font-britanicaBold"
@@ -30,14 +29,14 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="/tienda/categoria"
+                  href="/admin/productos"
                   className={
-                    Router.pathname === "/tienda/categoria"
+                    Router.pathname === "/admin/productos"
                       ? "font-britanicaBold"
                       : "font-britanicaRegular"
                   }
                 >
-                  Categorias
+                  Productos
                 </Link>
               </li>
               <li>
@@ -54,21 +53,8 @@ export default function Header() {
               </li>
             </ul>
           </nav>
-          <button
-            className="rounded-xl bg-violet-800 px-4 py-2 font-britanicaBold text-white"
-            onClick={() => setCartVisibility(!visibility)}
-          >
-            Carrito
-          </button>
         </div>
-        {visibility && (
-          <Carrito
-            visibility={visibility}
-            setCartVisibility={setCartVisibility}
-          />
-        )}
       </div>
     </header>
   );
 }
-

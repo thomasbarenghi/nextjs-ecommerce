@@ -2,6 +2,7 @@ import "../styles/globals.scss";
 import { Outfit } from "next/font/google";
 import Footer from "../componentes/masters/footer/footer";
 import Header from "../componentes/masters/header/header";
+import AdminHeader from "../componentes/admin/masters/header/headerAdmin";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import store, { persistor } from "../redux/store/store";
@@ -11,7 +12,8 @@ const outfit = Outfit({
   variable: "--font-outfit",
 });
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps, router }) {
+  const showHeader = !router.pathname.startsWith('/admin');
   return (
     <>
       <Provider store={store}>
@@ -22,7 +24,8 @@ export default function App({ Component, pageProps }) {
               --outfit-font: ${outfit.style.fontFamily};
             }
           `}</style>
-          <Header />
+          {showHeader && <Header />}
+          {!showHeader && <AdminHeader />}
           <Component {...pageProps} />
           <Footer />
         </PersistGate>
