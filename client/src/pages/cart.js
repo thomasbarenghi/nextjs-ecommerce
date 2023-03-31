@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 import { productos } from "./api/data";
 import { cartItemsFormatted } from "@/utils/formatCartItems";
 import Head from "next/head";
-import ProductTotal from "@/componentes/product/productTotal";
-import CartProductBox from "@/componentes/proyecto/cartProductBox";
+import {ProductTotal, CartProductBox} from "@/componentes";
 
 export default function About() {
   const [cartItems, setCartItems] = useState([]);
