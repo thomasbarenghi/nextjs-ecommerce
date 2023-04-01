@@ -19,7 +19,7 @@ export default function CartProductBox({ producto }) {
         onClick={() => dispatch(manageCart(producto))}
       />
       <Link
-        href={`/tienda/${producto.id}`}
+        href={`/tienda/producto/${producto.id}`}
         key={producto.id}
         className="flex flex-row items-center justify-start gap-2 align-middle"
       >

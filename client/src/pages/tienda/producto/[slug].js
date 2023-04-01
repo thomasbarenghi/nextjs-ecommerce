@@ -76,7 +76,7 @@ export default function SlugProduct() {
                     />
                   </label>
                   <button
-                    className=" rounded-xl bg-violet-600 px-4 py-2 font-britanicaBold text-white"
+                    className=" rounded-xl bg-violet-800 px-4 py-2 font-britanicaBold text-white"
                     onClick={() =>
                       dispatch(
                         addToCart({

@@ -5,12 +5,14 @@ const { Router } = require('express');
 //const platformsRoutes = require('./platforms');
 const productsRoutes = require('./products');
 const categoriesRoutes = require('./categories');
+const paymentsRoutes = require('./payments');
 const router = Router();
 
 // Ruta principal
 router.get('/', (req, res) => { res.json({ message: 'Bienvenido a mi API' }); });
 router.use("/products", productsRoutes);
 router.use("/categories", categoriesRoutes);
+router.use("/payments", paymentsRoutes);
 //router.use("/videogames", videogamesRoutes);
 //router.use("/genre", genreRoutes);
 //router.use("/videogameGenre", videogameGenreRoutes);

@@ -1,8 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { productos } from "../api/data";
 import { HeroBasic, ProductItem } from "@/componentes";
 

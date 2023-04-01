@@ -18,7 +18,7 @@ export default function CarritoItem({ producto }) {
         onClick={() => dispatch(deleteFromCart({ id: producto.id }))}
       />
       <div className="flex flex-row items-center justify-start gap-2 align-middle">
-        <Link href={`/tienda/${producto.id}`} key={producto.id}>
+        <Link href={`/tienda/producto/${producto.id}`} key={producto.id}>
           <ProductImage producto={producto} height={80} width={80} />
         </Link>
         <div>
