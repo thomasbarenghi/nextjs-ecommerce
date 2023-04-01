@@ -6,6 +6,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { ProductTotal, CartProductBox } from "@/componentes";
 import axios from "axios";
+import { urlServer } from "./api/config";
 
 export default function About() {
   const [cartItems, setCartItems] = useState([]);
@@ -31,7 +32,7 @@ export default function About() {
     });
 
     axios
-      .post("http://127.0.0.1:3001/api/payments", { products })
+      .post(`${urlServer}payments`, { products })
       .then((response) => {
         console.log(response.data);
         router.push(response.data.init_point);

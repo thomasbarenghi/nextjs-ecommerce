@@ -1,0 +1,1 @@
+export const urlServer = process.env.NEXT_PUBLIC_URL_SERVER;
