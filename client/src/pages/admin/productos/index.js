@@ -1,47 +1,52 @@
 import Head from "next/head";
-import { productos } from "@/pages/api/data";
+//import { productos } from "@/pages/api/data";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { AdminLayout, AdminProductTable, AdminIsland } from "@/componentes";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchProducts } from "@/redux/slices/adminSlice";
 
 export default function Productos() {
+  const Router = useRouter();
+  const dispatch = useDispatch();
+
+  const productos = useSelector((state) => state.admin.products);
+  console.log("productos", productos);
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, []);
+
+  // const products = useSelector((state) => state.admin);
+
+  // console.log("products", products);
+
   return (
     <>
-      <Head title="Categoria" description="Categoria" keywords="Categoria" />
-      <main>
-        <section className="w-full bg-gray-200">
-          <div
-            className="seccion container flex flex-col items-center justify-center py-14 align-middle"
-            style={{ minHeight: "30vh" }}
-          >
-            <h1 className="text-center font-britanicaBold">
-              Administra o crea productos
-            </h1>
+      <Head>
+        <title>Productos</title>
+      </Head>
+      <AdminLayout>
+        <header className="flex flex-row items-center justify-between pb-10 align-middle">
+          <div className="flex flex-col">
+            <h2 className="font-britanicaBold">Productos</h2>
+            <p>0 entries found</p>
           </div>
-        </section>
-        <section className="seccion container py-16">
-          <div className="flex flex-col items-start justify-start">
-            <table className="w-full table-auto">
-              <thead>
-                <tr>
-                  <th>Producto</th>
-                  <th>Precio</th>
-                  <th>Acciones</th>
-                </tr>
-              </thead>
-              <tbody>
-                {productos.map((producto) => (
-                  <tr key={producto.id}>
-                    <td style={{ width: "30%" }}>{producto.nombre}</td>
-                    <td style={{ width: "30%" }}>${producto.precio}</td>
-                    <td>
-                      <button>Editar</button>
-                      <button>Borrar</button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="flex flex-row gap-6">
+            <div></div>
+            <button
+              className=" rounded-xl bg-violet-800 px-4 py-2 font-britanicaBold text-white"
+              onClick={() => Router.push("/admin/productos/crear")}
+            >
+              Agregar producto
+            </button>
           </div>
-        </section>
-      </main>
+        </header>
+        <AdminIsland>
+          <AdminProductTable productos={productos} />
+        </AdminIsland>
+      </AdminLayout>
     </>
   );
 }

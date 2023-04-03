@@ -2,7 +2,6 @@ const { DataTypes } = require("sequelize");
 const sequelize = require("../data/connection");
 const Category = require("./category");
 
-
 const Product = sequelize.define(
   "products",
   {
@@ -54,7 +53,6 @@ const Product = sequelize.define(
     tableName: "products",
   }
 );
-
 
 Product.belongsToMany(Category, { through: "product_categories" });
 Category.belongsToMany(Product, { through: "product_categories" });

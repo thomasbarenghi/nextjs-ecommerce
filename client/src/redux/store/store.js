@@ -17,7 +17,7 @@ const persistMiddleware = getDefaultMiddleware({
 
 const store = configureStore({
   reducer: persistedReducer,
-  middleware: [...persistMiddleware],
+  middleware: persistMiddleware,
 });
 
 export const RootState = store.getState;

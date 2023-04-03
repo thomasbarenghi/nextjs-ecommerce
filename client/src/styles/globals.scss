@@ -59,8 +59,6 @@ pre,
 code,
 hr,
 table,
-th,
-td,
 form,
 fieldset,
 legend,
@@ -87,6 +85,12 @@ summary {
   word-break: break-word;
  // font-family: var(--font-BritanicaRegular);
  font-family: "Britanica Regular", serif;
+}
+
+th, td {
+  //outfit
+  font-family: "Britanica Regular", serif;
+ //font-family: var(--outfit-font);
 }
 
 /*Weight */
@@ -205,7 +209,7 @@ input[type="checkbox"] {
   width: 1.15em;
   height: 1.15em;
   border: 0.15em solid currentColor;
-  border-color: #1d4ed8;
+  border-color: #5B21B6;
   border-radius: 30%;
   transform: translateY(-0.075em);
   display: grid;
@@ -244,7 +248,7 @@ input[type="checkbox"]::before {
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em var(black);
   /* Windows High Contrast Mode */
-  background-color: #1d4ed8;
+  background-color: #5B21B6;
 }
 
 input[type="checkbox"]:checked::before {

@@ -22,7 +22,9 @@ const ProductCategory = sequelize.define(
     },
   },
   {
-    timestamps: false,
+    timestamps: true,
+    createdAt: "created_at",
+    updatedAt: "updated_at",
     tableName: "product_categories",
   }
 );

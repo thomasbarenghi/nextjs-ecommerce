@@ -1,6 +1,6 @@
 import "../styles/globals.scss";
 import { Outfit } from "next/font/google";
-import { Footer, Header } from "@/componentes";
+import { Footer, Header, AdminHeader, AdminFooter } from "@/componentes";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import store, { persistor } from "../redux/store/store";
@@ -23,9 +23,12 @@ export default function App({ Component, pageProps, router }) {
             }
           `}</style>
           {showHeader && <Header />}
+          {!showHeader && <AdminHeader />}
+
 
           <Component {...pageProps} />
-          <Footer />
+          {showHeader && <Footer />}
+          {!showHeader && <AdminFooter />}
         </PersistGate>
       </Provider>
     </>
